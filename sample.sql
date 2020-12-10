@@ -17,3 +17,14 @@ CASE
 RIGHT JOIN student s ON (s.ID = p.S_ID)
 LEFT JOIN company c ON (c.ID = p.C_ID) 
 WHERE s.DEPARTMENT = 'ECE';
+
+
+
+
+3) To display count of company
+
+select c.NAME AS COMPANY, count(p.C_ID) AS NO_OF_STUDENTS
+from company c
+LEFT JOIN placements p on c.ID = p.C_ID
+group by c.ID;
+
